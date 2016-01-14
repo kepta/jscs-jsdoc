@@ -217,6 +217,15 @@ describe('lib/rules/validate-jsdoc/require-description-complete-sentence', funct
                     function fun(p) {}
                 }
             }, {
+                it: 'should report senetences with <html> inside them',
+                code: function() {
+                  /**
+                   * Any parameter value without a name is assigned the boolean value <code>true</code>.
+                   * The first such parameter, going from left-to-right, is also assigned to a field named "_".
+                   */
+                   function fun(p) {}
+                }
+            }, {
                 it: 'should not report correct sentences formatted as lists',
                 code: function () {
                     /**
